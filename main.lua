@@ -1,26 +1,15 @@
-local mod =  require("test")
-_G.love = require("love")
-
-
-function love.load()
-    _G.number = 0
+--local mod =  require("test")
+--model = lovr.graphics.newModel('data/model.obj')
+--[[
+function lovr.load()
+    model = lovr.graphics.newModel('data/model.obj')
 end
 
-function love.update(dt)
+function lovr.update(dt)
     number = number +1
 end
-
-function love.draw()
-    love.graphics.print(number)
+]]--
+function lovr.draw(pass)
+    --pass:SetShader('normal')
+    pass:cube(0, 1.7,-1,.5,lovr.headset.getTime(),0,1,0,'line')
 end
-
-function main()
-    print(mod.sum(10,5))
-    mod.sayHello("Sigma")
-    
-    return 0
-end
-
-
-
-main()
