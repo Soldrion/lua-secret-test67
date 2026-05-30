@@ -33,30 +33,19 @@ function lovr.draw(Pass)
 
     if (v4 > 0) and (v4 <= 1) and toggle == false then
         toggle = false
-        v4 = v4 + .01
-    end
-    if v4 >= 1 then
-        toggle = true
-        v4 = v4 -.01
     end
     if toggle == true then
         v4 = v4 -.01
     end
-
     if toggle == false then
         v4 = v4 +.01
     end
-    if v4 < 0 then
+    if v4 > 1 then
+        v4 = 1
         toggle = true
-        v4 = v4 -.01
     end
-    --[[if v4 < -.1 then
-        toggle = false
-        v4 = v4 + .01
-    end]]--
-    if v4 < -1 and toggle == true then
+    if v4 < -1 then
         v4 = -1
-
         toggle = false
     end
     print(v4)
