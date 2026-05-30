@@ -24,7 +24,6 @@ function lovr.draw(Pass)
     --v2= math.random()
     --v3= math.random()
     v4= math.random()
-    Pass:SetColor(math.random(),math.random(),math.random(),math.random())
+    lovr.graphics.setBackgroundColor(math.random(),math.random(),math.random())
     Pass:cube(v1, v2,v3,v4,lovr.headset.getTime(),0,1,0,'line')
 end
-
