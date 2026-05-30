@@ -2,7 +2,10 @@ Yea so this is just a place for my thoughts about this whole thing..
 
 
 
+## General Idea
 
+2d game engine
 
+Single-threaded
 
-Must have a file for handling files
+Gonna be using my own modules cuz why not
