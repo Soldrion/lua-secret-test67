@@ -16,11 +16,16 @@ local v3 = -1
 local v4 = 1
 local toggle = false
 local cnt = 0
+
+local c1 = .5
+local c2 = .5
+local c3 = .5
+
 function lovr.draw(Pass)
     --pass:SetShader('normal')
     cnt=cnt+1
-    if cnt %50 == 0 then
-        lovr.graphics.setBackgroundColor(math.random(),math.random(),math.random(),math.random())
+    if cnt == 1 then
+        lovr.graphics.setBackgroundColor(c1,c2,c3)
     end
     
     
@@ -35,19 +40,26 @@ function lovr.draw(Pass)
         toggle = false
     end
     if toggle == true then
-        v4 = v4 -.01
+        v4 = v4 -.005
+
+        lovr.graphics.setBackgroundColor(c1,c2,c3)
     end
     if toggle == false then
         v4 = v4 +.01
+
+        lovr.graphics.setBackgroundColor(c1,c2,c3)
     end
-    if v4 > 1 then
-        v4 = 1
+    if v4 > 1.5 then
+        v4 = 1.5
         toggle = true
+   
+        lovr.graphics.setBackgroundColor(c1,c2,c3)
     end
-    if v4 < -1 then
-        v4 = -1
+    if v4 < -1.5 then
+        v4 = -1.5
         toggle = false
+s.setBackgroundColor(c1,c2,c3)
     end
-    print(v4)
+    print(c1,c2,c3)
     Pass:cube(v1, v2,v3,v4,lovr.headset.getTime(),0,1,0,'line')
 end
